@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+      log_in @user
   	  flash[:success] = "your account is created!"
   	  redirect_to root_url
   	else
@@ -16,8 +17,8 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def show
-  	@user = User.find(params[:id])
+  def show 
+    @user = User.find(params[:id])
   end
 
   def index
