@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 60}
   validates :email, presence: true, length: {maximum: 80}
   validates :password_digest, presence: true, length: {maximum: 80}
+  has_secure_password
 end
