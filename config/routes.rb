@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
-  get 'signup' => 'users#new'
+  get 'signup' => 'users#new'  
   root 'static_pages#home'
   get 'about' => 'static_pages#about'
   get 'help' => 'static_pages#help'
