@@ -1,0 +1,23 @@
+<% provide :title, "Category" %>
+<h1>Word list</h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_tag word_lists_path, method: "get", id: "form-word-list", remote: true do %>
+      <section class="categories">
+        <%= select_tag "category_id", options_for_select(@categories.collect {|category| [category.name, category.id]}) %>
+      </section>
+      <section class="learn-or-no">
+        <ul class="list-unstyled">
+          <% {1 => 'Learned', 2 => 'Not learn', 3 => 'All'}.each do |index, element| %>
+            <li>
+              <%= radio_button_tag "is_learned", index, element == 'All' %>
+              <span><%= element %><span>
+            </li>
+          <% end %>
+        </ul>
+      </section> 
+      <%= submit_tag "Search", class: "btn_submit_list_word" %>      
+    <% end %>
+    <div id="list-word-show"></div>
+  </div>
+</div>

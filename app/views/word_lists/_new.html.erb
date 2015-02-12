@@ -1,0 +1,20 @@
+<h4 class="text-center">Sumary: <%= @words.count %> words</h4>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2" id="lists-word">
+    <table id="list-tb">
+      <tr>
+        <th><p>Japanese</p></td><th><p>VietNamese</p></th>
+      </tr>
+      <% @words.each do |word| %>
+        <tr>
+          <td>
+            <%= word.content %>
+          </td>
+          <td>
+            <%= word.answers.correct.first.content %>
+          </td>
+        </tr>
+      <% end %>
+    </table>    
+  </div>
+</div>
