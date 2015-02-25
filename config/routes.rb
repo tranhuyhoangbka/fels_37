@@ -1,4 +1,5 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do    
+  resources :categories
   get 'word_lists' => 'word_lists#index'      
   get 'sessions/new'
   get 'login' => 'sessions#new'
