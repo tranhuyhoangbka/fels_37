@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :user_logged_in, only: :show
   def new
     @user = User.new
   end
@@ -16,9 +17,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @learneds = @user.learneds
   end
 
+  private
+
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password)
   end
 end

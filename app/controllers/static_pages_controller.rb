@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @learneds = current_user.learneds if logged_in?
   end
 
   def about

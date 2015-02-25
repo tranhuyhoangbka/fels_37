@@ -62,11 +62,14 @@ p {
 .main-container{
   border:1px solid #e1e1e1;
   min-height:500px;
+  .row .col-md-8{
+    padding-bottom:30px;
+  }
 }
 /* header */
 
 #logo {
- float: left;
+  float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
@@ -84,13 +87,11 @@ p {
 /* footer */
 
 footer {  
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  padding-top: 5px;  
   color: #777;
   position: fixed;
   bottom: 0px;
-  width:90%;
-
+  width: 90%;  
 }
 
 footer a {
@@ -107,6 +108,7 @@ footer small {
 footer ul {
   float: right;
   list-style: none;
+  margin-right: 25px;
 }
 
 footer ul li {
@@ -152,30 +154,31 @@ input {
   }
 }
 
-.user_info a.user_name{
-	font-weight:bold;	
+.user_info a.user_name {
+  font-weight: bold;	
 }
-.user_info a.user_name:hover{
-	text-decoration: none;
-}
-
-aside.info{
-  border-right:1px solid #e1e1e1;
+.user_info a.user_name:hover {
+  text-decoration: none;
 }
 
-.word-lession{
-  margin-top:25px;
+aside.info {
+  border-right: 1px solid #e1e1e1;
+  min-height: 400px;
 }
-.word-lession .word-bt{
-  margin-right:15px;
+
+.word-lession {
+  margin-top: 25px;
 }
-.word-lession .lession-bt{
-  margin-left:15px;
+.word-lession .word-bt {
+  margin-right: 15px;
 }
-h2.line{
-  margin-top:40px;
-  padding-bottom:6px;
-  border-bottom:1px solid #e1e1e1;
+.word-lession .lession-bt {
+  margin-left: 15px;
+}
+h2.line {
+  margin-top: 40px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e1e1e1;
 }
 /* sidebar */
 
@@ -205,11 +208,43 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
+.gravatar {  
   margin-right: 10px;
 }
 
 .gravatar_edit {
   margin-top: 15px;
+}
+section.categories {
+  width: 165px;
+  float: left;
+}
+select#cate_id {
+  width: 165px;
+}
+section.learn-or-no {
+  width: 600px;
+  ul li {
+    width: 150px;
+    float: left;
+    input[type='radio'] {
+      width: 40px;  
+    }
+  }  
+}
+input.btn_submit_list_word {
+  width: 100px;
+  height: 30px;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+#lists-word #list-tb {
+  margin: 2px auto;
+  th, td {
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+  }
 }

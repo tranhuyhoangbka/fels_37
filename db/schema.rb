@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209013951) do
+ActiveRecord::Schema.define(version: 20150211171452) do
 
   create_table "activities", force: :cascade do |t|
     t.text     "content"
@@ -41,10 +41,12 @@ ActiveRecord::Schema.define(version: 20150209013951) do
   create_table "learneds", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "word_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "category_id"
   end
 
+  add_index "learneds", ["category_id"], name: "index_learneds_on_category_id"
   add_index "learneds", ["user_id"], name: "index_learneds_on_user_id"
   add_index "learneds", ["word_id"], name: "index_learneds_on_word_id"
 
