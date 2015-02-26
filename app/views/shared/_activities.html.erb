@@ -1,0 +1,7 @@
+<% @activities.each do |activity| %>
+  <li class="activity">
+    <%= link_to gravatar_for(activity.user), activity.user %>
+    <span><strong><%= activity.user.name.titleize %></strong></span>
+    <span><%= activity.content %></span>
+  </li>
+<% end %>

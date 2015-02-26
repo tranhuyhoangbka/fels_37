@@ -1,0 +1,35 @@
+<h3 class='text-center'><%= @category.name %> <span>Result <i id="num_correct"></i>
+  /20</span></h3>
+<div class='row'>
+  <div class='col-md-8 col-md-offset-2'>
+    <div class='row'>
+      <div class='col-md-2 status'>
+        <% @question_answer_id_list.each do |word_id, answer_id| %>        
+          <% if correct_answer?(word_id.to_i, answer_id.to_i) %>
+            <p class='correct'>o</p>
+          <% else %>
+            <p class='incorrect'>x</p>
+          <% end %>
+        <% end %>
+      </div>
+      <div class='col-md-5' id="words">
+        <% @words.each do |word| %>
+          <p class="word"><%= word.content %></p>
+        <% end %>
+      </div>
+      <div class="col-md-5" id="answers">
+        <% @answers.each do |answer| %>
+          <p class="answer"><%= answer.content %></p>
+        <% end %>
+      </div>
+    </div>
+    <%= link_to "Save result", learned_create_path(question: @question_answer_id_list,
+      category_id: @category.id), method: :post, class: 'btn btn-success save_result' %>
+  </div>
+</div>
+
+<script type='text/javascript'>
+  $('#num_correct').text(""+num_correct);
+  $('.cate-name').hide();
+  $('#notice').hide();
+</script>
