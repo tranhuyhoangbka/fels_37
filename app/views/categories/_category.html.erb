@@ -1,0 +1,11 @@
+<% provide :title, 'Categories' %>
+<li class='category'>
+  <h3><%= category.name %> <span>You've learned <%= current_user.learneds
+    .filter_by_category(category).count %>/<%= category.words.count %></span></h3>
+  <p>
+    <% category.words.limit(60).each do |word| %>
+      <%= word.content %>
+    <% end %>
+  </p>
+  <p><%= link_to 'Next', category, class: 'btn btn-primary btn-lg' %></p>
+</li>
