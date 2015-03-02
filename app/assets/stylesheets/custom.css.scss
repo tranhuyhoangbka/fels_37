@@ -187,8 +187,8 @@ aside {
     margin-top: 20px;
   }
   section {
-    padding: 10px 0;
-    margin-top: 20px;
+    padding: 0px 0;
+    margin-top: 0px;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -259,4 +259,76 @@ input.btn_submit_list_word {
     font-size: 18px;
     margin-left: 10px;
   }
+}
+.main-container>h3 {
+  margin-left: -150px;
+}
+.main-container>h3 span {
+  font-size: 18px;
+  margin-left: 20px;
+}
+.main-container>h3 span strong {
+  font-weight: normal;
+}
+#show_result h3 span {
+  font-size: 18px;
+}
+
+.questions {
+  margin-top: 30px;
+}
+.question {
+  margin-bottom: 25px;
+}
+.question h3 {
+  margin-left: 200px;
+  margin-top: 38px;
+}
+.question ul {
+}
+.question ul li input {
+  width: 30px;
+}
+.btn-next {
+  margin-left: 390px;
+  margin-top: 30px;
+}
+.correct {
+  font-size: 25px;
+  color: #0660DD;
+  font-weight: bold;
+}
+.incorrect {
+  font-size: 25px;
+  font-weight: bold;
+  color: #F71D1D;
+}
+.questions input.btn {
+  margin-top: 80px;
+}
+.table tr td span {
+  line-height: 50px;
+}
+.status p{
+  margin-left: 180px;
+}
+#words>.word {
+  line-height: 50px;
+  margin-left: 180px;
+}
+#answers>.answer {
+  line-height: 50px;
+  margin-left: 100px;
+}
+.correct, .incorrect {
+  line-height: 50px;
+}
+
+.save_result {
+  margin-left: 320px;
+  margin-top: 40px;
+  width: 150px;
+}
+.activity {
+  margin-bottom: 10px;
 }
