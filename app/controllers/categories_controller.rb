@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  before_action :user_logged_in, only: [:index, :show, :new, :create, :destroy]
+  before_action :admin_user, only: [:new, :create, :destroy]
+  
   def index
     @categories = Category.all
   end
@@ -20,5 +23,29 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new category_params
+    if @category.save
+      flash[:success] = 'Create category is success!'
+      redirect_to root_url
+    else
+      flash.now[:danger] = 'Not success!'
+      render 'new'
+    end
+  end
+
+  def destroy
+    Category.find(params[:id]).destroy
+    flash[:success] = 'deleted category'
+    redirect_to root_url
+  end
+  
+  private
+
+  def category_params
+    params.require(:category).permit :name
   end
 end

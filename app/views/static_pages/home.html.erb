@@ -9,6 +9,23 @@
       <section class="learned">
         <p>Learned: <%= @learneds.count %> words</p>
       </section>
+      <% if current_user.admin? %>
+        <section class='admin-area text-left'>
+          <h3 class='text-center'>Adminstrator</h3>
+          <dl>
+            <dt>Users</dt>
+            <dd><%= link_to 'Setting', users_path %></dd>
+
+            <dt>Category</dt>
+            <dd><%= link_to 'Add category', new_category_path %></dd>
+            <dd><%= link_to 'List all and delete', categories_path %></dd>
+
+            <dt>Word</dt>
+            <dd><%= link_to 'Add word', new_word_path %></dd>
+            <dd><%= link_to 'Setting words and answers', words_path %></dd>
+          </dl>          
+        </section>
+      <% end %>
     </aside>
     <div class="col-md-10 primary">
       <section class='word-lession text-center'>

@@ -1,4 +1,7 @@
-Rails.application.routes.draw do 
+Rails.application.routes.draw do   
+  resources :words do 
+    resources :answers  
+  end
   post 'learned_create' => 'learneds#create'  
   resources :categories, path: :lessions
   # get '/lession/:id' => 'categories#show', as: 'lession'

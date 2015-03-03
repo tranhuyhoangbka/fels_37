@@ -7,5 +7,11 @@
       <%= word.content %>
     <% end %>
   </p>
-  <p><%= link_to 'Next', category_path(category), class: 'btn btn-primary btn-lg' %></p>
+  <p>
+    <%= link_to 'Next', category_path(category), class: 'btn btn-primary btn-lg' %>
+    <% if current_user.admin? %>
+      <span><%= link_to 'Delete', category, method: :delete, class: 'btn btn-danger 
+        btn-lg', data: {confirm: 'Are you sure?'} %></span>
+    <% end %>
+  </p>
 </li>
