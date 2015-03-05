@@ -9,6 +9,9 @@
       <section class="learned">
         <p>Learned: <%= @learneds.count %> words</p>
       </section>
+      <section class='stats'>
+        <%= render 'shared/stats' %>
+      </section>
       <% if current_user.admin? %>
         <section class='admin-area text-left'>
           <h3 class='text-center'>Adminstrator</h3>
@@ -34,7 +37,13 @@
       </section>
       <h2 class="line">Activities</h2>    
       <section class="activities">
-      
+        <div class='row'>
+          <div class='col-md-8 col-md-offset-2'>
+            <ul class='list-unstyled'>
+              <%= render 'shared/activities' %>
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   </div>
