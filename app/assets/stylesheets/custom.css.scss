@@ -260,9 +260,6 @@ input.btn_submit_list_word {
     margin-left: 10px;
   }
 }
-.main-container>h3 {
-  margin-left: -150px;
-}
 .main-container>h3 span {
   font-size: 18px;
   margin-left: 20px;
@@ -331,4 +328,49 @@ input.btn_submit_list_word {
 }
 .activity {
   margin-bottom: 10px;
+}
+.user {
+  margin-bottom: 10px;
+  margin-left: 170px;
+}
+.words {
+  margin-left: 180px;  
+}
+li.word {
+  position: relative;
+}
+li.word span {
+  position: absolute;
+  left: 150px;
+}
+li.answer {
+  margin-left: 180px;
+  position: relative;
+  span {
+    position: absolute;
+    left: 150px;
+  }
+}
+#form-answer {
+  margin-top: 45px;
+  input.btn {
+    margin-top: 20px;
+  }
+}
+#answer_status {
+  width: 25px;
+}
+
+.admin-area {
+  margin-top: 20px;
+  border-top: 1px solid #e1e1e1;
+}
+dt {
+  margin-top: 15px;
+}
+dd {
+  margin-left: 20px;
+}
+#word_category_id {
+  width: 190px;
 }

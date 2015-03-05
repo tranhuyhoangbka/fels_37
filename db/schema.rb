@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211171452) do
+ActiveRecord::Schema.define(version: 20150302181332) do
 
   create_table "activities", force: :cascade do |t|
     t.text     "content"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20150211171452) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
-    t.boolean  "status"
+    t.boolean  "status",     default: false
     t.integer  "word_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "answers", ["word_id"], name: "index_answers_on_word_id"
@@ -64,8 +64,9 @@ ActiveRecord::Schema.define(version: 20150211171452) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "admin",           default: false
   end
 
   create_table "words", force: :cascade do |t|

@@ -1,0 +1,25 @@
+<% provide :title, @word.content %>
+<h3 class='text-center'>Word: <%= @word.content %></h3>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3 jumbotron'>
+    <h3 class='well'>Answers list of : <%= @word.content %></h3>
+    <ul class='list-unstyled answers'>
+      <% @answers.each do |answer| %>
+        <li class='answer'>
+          <%= answer.content %>
+          <span><%= link_to 'Delete', [@word, answer], method: :delete, data: {
+            confirm: 'Are you sure?'} %></span>
+        </li>
+      <% end %>
+    </ul>
+    <div id = 'form-answer'>
+      <h3 class='well'>Create a answer</h3>
+      <%= form_for :answer, url: word_answers_path(@word) do |f| %>
+        <%= f.label :content %>
+        <%= f.text_field :content, class: 'form-control' %>
+        <%= f.check_box :status, {checked: true}, true, false %> <span>Correct</span>
+        <%= f.submit 'Create', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
