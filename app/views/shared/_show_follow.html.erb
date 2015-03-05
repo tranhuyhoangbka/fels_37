@@ -1,0 +1,28 @@
+<% provide  :title, @title %>
+<div class='row follow'>
+  <aside class='col-md-4'>
+    <section class='info'>
+      <p class='text-center'><%= gravatar_for @user %></p>
+      <h1 class='text-center'><%= @user.name %></h1>
+      <span class='text-center'><%= link_to 'view my profile', @user %></span>      
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+      <% if @users.any? %>
+        <div class='user_avatars'>
+          <% @users.each do |user| %>
+            <%= link_to gravatar_for(user, size: 30), user %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class='col-md-8'>
+    <h3 class='text-center'><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class='users follow list-unstyled'>
+        <%= render @users %>
+      </ul>      
+    <% end %>
+  </div>
+</div>
