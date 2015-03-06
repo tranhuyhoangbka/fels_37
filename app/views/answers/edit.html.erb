@@ -1,0 +1,14 @@
+<% provide :title, 'Update answer' %>
+<h1>Update Answer</h1>
+<div class='row'>
+  <div class='col-md-8 col-md-offset-2'>
+    <%= form_for [@word, @answer] do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :content %>
+      <%= f.text_field :content, class: 'form-control' %>
+      <%= f.label :status %>
+      <%= f.check_box :status, {checked: true}, true, false %>
+      <%= f.submit 'Update', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

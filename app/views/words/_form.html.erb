@@ -1,0 +1,9 @@
+<%= form_for @word do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.label :content %>
+  <%= f.text_field :content, class: 'form-control' %>
+  <p><strong>Category</strong></p>
+  <%= f.select :category_id, @categories.collect {|category| [category.name, 
+    category.id]} %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

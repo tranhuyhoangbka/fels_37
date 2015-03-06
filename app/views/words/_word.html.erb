@@ -2,4 +2,5 @@
   <%= link_to word.content, word %>
   <span><%= link_to 'Delete', word, method: :delete, data: {confirm: 'Are you sure?'}
     %></span>
+  <span><%= link_to 'Edit', edit_word_path(word) %></span>
 </li>

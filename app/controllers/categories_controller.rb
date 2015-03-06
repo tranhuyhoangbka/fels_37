@@ -30,17 +30,32 @@ class CategoriesController < ApplicationController
     @category = Category.new category_params
     if @category.save
       flash[:success] = 'Create category is success!'
-      redirect_to root_url
+      redirect_to categories_url
     else
       flash.now[:danger] = 'Not success!'
       render 'new'
     end
   end
 
+  def edit
+    @category = Category.find params[:id]
+  end
+
+  def update
+    @category = Category.find params[:id]
+    if @category.update_attributes category_params
+      flash[:success] = 'updated category!'
+      redirect_to categories_url
+    else
+      flash.now[:danger] = 'Not success!'
+      render 'edit'
+    end
+  end
+
   def destroy
     Category.find(params[:id]).destroy
     flash[:success] = 'deleted category'
-    redirect_to root_url
+    redirect_to categories_url
   end
   
   private
