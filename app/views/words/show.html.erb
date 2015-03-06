@@ -9,6 +9,7 @@
           <%= answer.content %>
           <span><%= link_to 'Delete', [@word, answer], method: :delete, data: {
             confirm: 'Are you sure?'} %></span>
+          <span><%= link_to 'Edit', edit_word_answer_path(@word, answer) %></span>  
         </li>
       <% end %>
     </ul>

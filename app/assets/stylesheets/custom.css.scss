@@ -278,7 +278,7 @@ input.btn_submit_list_word {
   margin-bottom: 25px;
 }
 .question h3 {
-  margin-left: 200px;
+  margin-left: 250px;
   margin-top: 38px;
 }
 .question ul {
@@ -343,12 +343,20 @@ li.word span {
   position: absolute;
   left: 150px;
 }
-li.answer {
-  margin-left: 180px;
+li.word span:last-child {
+  position: absolute;
+  left: 250px;
+}
+.answers>li.answer {
+  margin-left: 70px;
   position: relative;
-  span {
+  span:first-child {
     position: absolute;
     left: 150px;
+  }
+  span:last-child {
+    position: absolute;
+    left: 250px;
   }
 }
 #form-answer {
@@ -415,9 +423,12 @@ dd {
   width: 225px;
   border-right: 1px solid #e1e1e1;  
 }
-.stats {
+.follow .stats {
   margin-left: 30px;
 }
 .follow .users {
   margin-left: 120px;
+}
+#answer-lession .answer {
+  margin-left: 30px;
 }

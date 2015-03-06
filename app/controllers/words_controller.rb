@@ -27,6 +27,22 @@ class WordsController < ApplicationController
     @answers = @word.answers
   end
 
+  def edit
+    @word = Word.find params[:id]
+    @categories = Category.all
+  end
+
+  def update
+    @word = Word.find params[:id]
+    if @word.update_attributes word_params
+      flash[:success] = 'updated word!'
+      redirect_to words_url
+    else
+      flash.now[:danger] = 'Not success!'
+      render 'edit'
+    end
+  end
+
   def destroy
     Word.find(params[:id]).destroy
     flash[:success] = 'Deleted Word'

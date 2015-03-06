@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  before_action :user_logged_in 
+
   def create
     @word = Word.find params[:word_id]
     @answer = @word.answers.build answer_params
@@ -15,6 +17,23 @@ class AnswersController < ApplicationController
     @word = Word.find params[:word_id]
     @word.answers.find(params[:id]).destroy
     redirect_to @word
+  end
+
+  def edit
+    @word = Word.find params[:word_id]
+    @answer = @word.answers.find params[:id]
+  end
+
+  def update
+    @word = Word.find params[:word_id]
+    @answer = @word.answers.find params[:id]
+    if @answer.update_attributes answer_params
+      flash[:success] = 'Updated answer!'
+      redirect_to @word
+    else
+      flash.now[:danger] = 'Not success!'
+      render 'edit'
+    end
   end
 
   private
